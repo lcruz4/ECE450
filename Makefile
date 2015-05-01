@@ -1,14 +1,14 @@
 CC=gcc
 DEPS =libBBB.c
-SOURCES= main.c
-EXECUTABLE = pwm
+SOURCES = pwmwithlib.c
+EXECUTABLE = pwmwithlib
 
 all: $(EXECUTABLE)
 
-pwm: main.c $(DEPS)
-        $(CC) -o $@ $^
+pwmwithlib: pwmwithlib.c $(DEPS)
+	$(CC) -o $@ $^
 
 .PHONY: clean
 
 clean:
-        rm -f *.o *~ $(EXECUTABLE)
+	rm -f *.o *~ $(EXECUTABLE)
