@@ -375,6 +375,28 @@ int setPWMOnOff(int helpnum, char* pin, int run)
 	return 0;
 }
 
+int setPWMPolarity(int helpnum, char* pin, int run)
+{
+	FILE *pwm;
+	char buf[5];
+	char buf2[50] = "/sys/devices/ocp.3/pwm_test_";
+
+	//build file path
+	sprintf(buf,"%i",helpnum);
+	strcat(buf2,pin);
+	strcat(buf2,".");
+	strcat(buf2,strcat(buf,"/polarity"));
+
+	pwm = fopen(buf2, "w");
+	if(pwm == NULL) printf("PWM Run failed to open\n");
+	fseek(pwm,0,SEEK_SET);
+	fprintf(pwm,"%d",run);
+	fflush(pwm);
+	fclose(pwm);
+
+	return 0;
+}
+
 //*************************************************
 //*               UART FUNCTIONS                  *
 //*************************************************

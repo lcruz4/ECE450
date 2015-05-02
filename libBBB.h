@@ -35,7 +35,10 @@ typedef struct {
 #define USR2	"usr2"
 #define USR3	"usr3"
 #define P8_13	"P8_13"
-#define P8_19	"P8_19"
+#define P9_14	"P9_14"
+#define P9_12	60
+#define P8_11	45
+
 #define E	65
 #define RS	27
 #define D4	46
@@ -68,6 +71,7 @@ int initPWM(int mgrnum, char* pin);
 int setPWMPeriod(int helpnum, char* pin, int period);
 int setPWMDuty(int helpnum, char* pin, int duty);
 int setPWMOnOff(int helpnum, char* pin, int run);
+int setPWMPolarity(int helpnum, char* pin, int run);
 
 //UART Prototypes
 int initUART(int mgrnum, char* uartnum);
