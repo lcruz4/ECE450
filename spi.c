@@ -1,19 +1,4 @@
-/** SPI C Transfer Example, Written by Derek Molloy (www.derekmolloy.ie)
-*    for the book Exploring BeagleBone. Based on the spidev_test.c code
-*    example at www.kernel.org
-*
-* Written by Derek Molloy for the book "Exploring BeagleBone: Tools and 
-* Techniques for Building with Embedded Linux" by John Wiley & Sons, 2014
-* ISBN 9781118935125. Please see the file README.md in the repository root 
-* directory for copyright and GNU GPLv3 license information.            */
-
-#include<stdio.h>
-#include<fcntl.h>
-#include<unistd.h>
-#include<sys/ioctl.h>
-#include<stdint.h>
-#include<time.h>
-#include<linux/spi/spidev.h>
+#include "spi.h"
 
 #define SPI_PATH "/dev/spidev1.0"
 
@@ -82,15 +67,4 @@ int analog_read(uint8_t channel){
    printf("recvbuf:[%d,%d,%d]\n",recvbuf[0],recvbuf[1],recvbuf[2]);
    close(fd);               //close the file
    return ((recvbuf[1]&3)<<8)+recvbuf[2];
-}
-
-void main(){
-  int c0,c1,c2;
-  while(1){
-    c0 = analog_read(0);
-    c1 = analog_read(1);
-    c2 = analog_read(2);
-    printf("c0:%d\nc1:%d\nc2:%d\n\n",c0,c1,c2);
-    sleep(1);
-  }
 }

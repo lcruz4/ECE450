@@ -34,10 +34,11 @@ typedef struct {
 #define USR1	"usr1"
 #define USR2	"usr2"
 #define USR3	"usr3"
-#define P8_13	"P8_13"
-#define P9_14	"P9_14"
-#define P9_12	60
-#define P8_11	45
+#define P8_13	"P8_13"		//Rear right wheel
+#define P9_14	"P9_14"		//Front right wheel
+#define P9_12	60		//Direction Right
+#define P8_11	45		//Direction Left
+#define P8_8    67		//Left Wheel encoder
 
 #define E	65
 #define RS	27
@@ -117,4 +118,3 @@ void pauseSec(int sec);
 int  pauseNanoSec(long nano);
 
 #endif
-

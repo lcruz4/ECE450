@@ -1,6 +1,6 @@
 #include "libBBB.h"
 #include <dirent.h>
-
+#include "spi.h"
 #define MGRNUM	9
 
 int helper(char*);

@@ -1,5 +1,5 @@
 CC=gcc
-DEPS =libBBB.c motor.c
+DEPS =libBBB.c motor.c spi.c
 SOURCES = pwmwithlib.c
 EXECUTABLE = pwmwithlib
 

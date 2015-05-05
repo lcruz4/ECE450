@@ -82,8 +82,9 @@ void spin_left(int duty){
 }
 
 void spin_right(int duty){
-	setPinValue(P8_11,1);	//left wheels forward
-	setPinValue(P9_12,0);	//right wheels backward
+	printf("DEBUG\n");
+	printf("ret1:%d\n",setPinValue(P8_11,1));	//left wheels forward
+	printf("ret2:%d\n",setPinValue(P9_12,0));	//right wheels backward
 	speed(duty);
 }
 
@@ -93,6 +94,6 @@ void speed(int duty){
 }
 
 void stop(){
-	setPWMDuty(LEFT_HELPER, P8_13, 0);
-	setPWMDuty(RIGHT_HELPER, P9_14, 0);
+	setPWMDuty(LEFT_HELPER, P8_13, 500000);
+	setPWMDuty(RIGHT_HELPER, P9_14, 500000);
 }
